@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-function Sidebar() {
-  let [expand, setExpand]= useState(false);
+function Sidebar({expand, setExpand}) {
   return (
     <div className="bg-[#282A2C] h-[100vh] flex flex-col">
       <div className="p-4 sticky top-0 bg-[#282A2C]">
