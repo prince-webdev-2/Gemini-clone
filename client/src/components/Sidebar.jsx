@@ -10,7 +10,7 @@ function Sidebar({expand, setExpand}) {
             <i className="fa-solid fa-magnifying-glass text-[#A8AAAA] py-4 ps-4 pe-8 rounded-xl hover:bg-[#323537] duration-300 cursor-pointer"></i>
           )}
         </div>        
-        <div className=" mt-3 flex items-center gap-4 rounded-2xl p-4 cursor-default">
+        <div className=" mt-3 flex items-center gap-4 rounded-2xl p-4 cursor-default cursor-pointer">
           <i className="fa-solid fa-pen-to-square text-[#9EA9B0]"></i>
           <p className={`text-[#9EA9B0] ${expand ? '' : 'hidden'}`}>New chat</p>
         </div>
