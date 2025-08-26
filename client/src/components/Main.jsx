@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { assets } from '../assets/assets';
 import { Context } from '../context/context';
+import '../index.css'
 
 function Main({expand}) {
   const {onSent, resentPrompt, showResult, loading, resultData, setInput, input}= useContext(Context)
@@ -20,7 +21,23 @@ function Main({expand}) {
             <h1 className='text-center text-[#4286F8] text-2xl sm:text-4xl font-semibold my-[3rem]'>Hello, Prince Kumar</h1>
             <h3 className={`text-center text-[#4285f858] text-sm sm:text-2xl tracking-[.3rem] font-semibold ${expand ? 'sm:tracking-[.5rem] lg:tracking-[1rem]' : 'sm:tracking-[1rem]' }`}>How can i help you?</h3>
           </> :
-          <div></div>
+          <div className=''>
+            <div className='flex gap-3 w-full justify-end items-center'>
+              <p>{resentPrompt}</p>
+              <img className='w-[1.3rem] h-[1.3rem]' src={assets.userLogo} alt="user-logo" />
+            </div>
+            <div className='flex gap-3 w-full justify-start mt-5'>
+              <img className='w-[1.3rem] h-[1.3rem]' src={assets.geminiLogo} alt="gemini-logo" /> 
+              {loading?
+                <div className='flex flex-col w-full gap-[10px]'>
+                  <hr id='loader' />
+                  <hr id='loader' />
+                  <hr id='loader' />
+                </div>
+                : <p className='text-justify leading-relaxed text-[#A2A9B0]' dangerouslySetInnerHTML={{__html:resultData}}></p>
+              }
+            </div>
+          </div>
         }
       </div>
       <div className={`sticky bottom-0 max-sm:${expand ? 'hidden' : null}`}>
