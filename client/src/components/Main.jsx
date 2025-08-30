@@ -48,7 +48,10 @@ function Main({expand}) {
               [&::-webkit-scrollbar-thumb]:bg-[#282A2C]
               [&::-webkit-scrollbar-thumb]:rounded-full"
               placeholder="Ask Gemini" onChange={(e)=>setInput(e.target.value)} value={input} />
-              <div className='p-4 cursor-pointer duration-300 text-[#A2A9B0] hover:text-white' onClick={()=>onSent()}><i className="fa-solid fa-paper-plane"></i></div>
+              {input ?
+                <div className='p-4 cursor-pointer duration-300 text-[#A2A9B0] hover:text-white' onClick={()=>onSent()}><i className="fa-solid fa-paper-plane"></i></div>
+                : null
+              }
           </div>
             <div className='flex justify-between'>
             <div className='flex gap-4'>
